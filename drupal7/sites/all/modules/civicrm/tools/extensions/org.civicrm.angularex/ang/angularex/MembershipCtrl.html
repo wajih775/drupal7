@@ -1,0 +1,98 @@
+<div class="crm-container">
+    <div crm-ui-debug="myContact"></div>
+
+    <form name="myForm" crm-ui-id-scope>
+
+        <div class="help" style="display:none;">
+            <p>{{ts('This is an auto-generated skeletal page.')}}</p>
+
+            <p>{{ts('To view more debugging information, edit the URL and include "?angularDebug=1".')}}</p>
+        </div>
+
+        <div crm-ui-accordion="{title: ts('Memberships')}">
+            <div class="crm-block">
+                <div class="crm-group">
+                    <div crm-ui-field="{name: 'myForm.start_date', title: ts('Filters'), help: hs('full_name')}">
+                        <input
+                            crm-ui-id="myForm.start_date"
+                            name="start_date"
+                            ng-model="myForm.start_date"
+                            class="crm-form-text"
+                            placeholder="{{ts('Start Date')}}" />
+                        <input
+                            crm-ui-id="myForm.end_date"
+                            name="end_date"
+                            ng-model="myForm.end_date"
+                            class="crm-form-text"
+                            placeholder="{{ts('End Date')}}" />
+                    </div>
+                    <div>
+                        <button ng-click="filterByDate(myForm)">{{ts('Search')}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crm-block">
+                <div class="crm-group">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Contact ID
+                                </th>
+                                <th>Membership Type Id
+                                </th>
+                                <th>Join Date
+                                </th>
+                                <th>Start Date
+                                </th>
+                                <th>End Date
+                                </th>
+                                <th>Source
+                                </th>
+                                <th>Status Id
+                                </th>
+                                <th>Is Test
+                                </th>
+                                <th>Is Pay Later
+                                </th>
+                                <th>Membership Name
+                                </th>
+                                <th>Relationship Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="model in myMembership">
+                                <td>{{model.contact_id}}
+                                </td>
+                                <td>{{model.membership_type_id}}
+                                </td>
+                                <td>{{model.join_date}}
+                                </td>
+                                <td>{{model.start_date}}
+                                </td>
+                                <td>{{model.end_date}}
+                                </td>
+                                <td>{{model.source}}
+                                </td>
+                                <td>{{model.status_id}}
+                                </td>
+                                <td>{{model.is_test}}
+                                </td>
+                                <td>{{model.is_pay_later}}
+                                </td>
+                                <td>{{model.membership_name}}
+                                </td>
+                                <td>{{model.relationship_name}}
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
